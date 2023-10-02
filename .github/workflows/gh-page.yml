@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest    # 依赖环境
 
     steps:                    # 工作流步骤
-      # step 1. 获取源码
+      # step 1. 获取源码, 拉取仓库代码
       - name: Chekcout 🛎️             # 步骤名
         uses: actions/checkout@master # 使用插件 => https://github.com/actions/checkout
 
@@ -30,7 +30,7 @@ jobs:
           npm install
           npm run build
 
-      # step 4. 项目部署
+      # step 4. 项目部署, 将打包后的产物合并到指定的分支上
       - name: Deploy 🚀                                   # 步骤名
         uses: JamesIves/github-pages-deploy-action@v4.2.2 # 使用插件 => https://github.com/JamesIves/github-pages-deploy-action
         with:
